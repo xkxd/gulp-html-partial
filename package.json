@@ -1,0 +1,36 @@
+{
+  "name": "gulp-html-partial",
+  "version": "1.0.0",
+  "description": "Gulp plugin for including HTML files into each other. Supports nested partials and passing parameters as attributes.",
+  "author": "xkxd",
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "gulp",
+    "plugin",
+    "partial",
+    "include"
+  ],
+  "homepage": "https://github.com/xkxd/gulp-html-partial",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0"
+  },
+  "dependencies": {
+    "html": "^1.0.0",
+    "lodash.partition": "^4.6.0",
+    "through2": "^2.0.3",
+    "gulp-util": "^3.0.8"
+  },
+  "main": "gulp-html-partial.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xkxd/gulp-html-partial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xkxd/gulp-html-partial/issues"
+  }
+}
