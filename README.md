@@ -6,7 +6,8 @@ I know, there are some long-time solutions like [gulp-file-include](https://gith
 Supports nested partials and passing parameters as attributes.
 
 # Requirements 
-- [gulp](http://gulpjs.com/) (>=3.9.1) (but I guess it'll work with older versions too)
+- [gulp](http://gulpjs.com/) (>=3.9.1) (guess it'll work with older versions too)
+- [Node](http://nodejs.org/) (>=6.5.0) (not sure 4.x will handle all ES6 stuff)
 
 # Installation
 `npm install --save-dev gulp-html-partial`
@@ -93,4 +94,4 @@ const defaults = {
 
 # Notes
 - missing partials defaults to empty string
-- errors fires as logs, not as events, to make sure every, not only the first one, missing partial will me described - but I guess there is a way to make that work with events too
+- errors fire as logs, not as events, to make sure every, not only the first one, missing partial will be described - but I guess there is a way to make that work with events too
