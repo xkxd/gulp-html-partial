@@ -4,6 +4,7 @@ const html = require('html');
 const gutil = require('gulp-util');
 
 module.exports = (function () {
+    "use strict";
 
     /**
      * @type {String}
@@ -102,8 +103,8 @@ module.exports = (function () {
      * @param {Array.<Object>} attributes - tag
      * @returns {String}
      */
-    function replaceAttributes(file, attributes = []) {
-        return attributes.reduce((html, attrObj) =>
+    function replaceAttributes(file, attributes) {
+        return (attributes || []).reduce((html, attrObj) =>
             html.replace(options.variablePrefix + attrObj.key, attrObj.value), file && file.toString() || '');
     }
 
