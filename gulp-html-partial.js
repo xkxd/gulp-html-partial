@@ -104,8 +104,12 @@ module.exports = (function () {
      * @returns {String}
      */
     function replaceAttributes(file, attributes) {
-        return (attributes || []).reduce((html, attrObj) =>
-            html.replace(options.variablePrefix + attrObj.key, attrObj.value), file && file.toString() || '');
+        let html = file && file.toString() || '';
+        (attributes || []).forEach((attrib) => {
+            let regex = new RegExp(escapeRegExp(options.variablePrefix + attrib.key), 'g');
+            html = html.replace(regex, attrib.value);
+        });
+        return html;
     }
 
     /**
@@ -159,4 +163,14 @@ module.exports = (function () {
     }
 
     return transform;
+
+    /**
+     * Escapes characters for use in a regular expression
+     * @param {string} s String to escape
+     * @returns {string}
+     * @source https://stackoverflow.com/a/3561711/1267001
+     */
+    function escapeRegExp(s) {
+        return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    }
 })();
