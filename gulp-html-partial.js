@@ -19,7 +19,8 @@ module.exports = (function () {
     const options = {
         tagName: 'partial',
         basePath: '',
-        variablePrefix: '@@'
+        variablePrefix: '@@',
+        prettyPrintOptions: { }
     };
 
     /**
@@ -126,9 +127,9 @@ module.exports = (function () {
      */
     function injectHTML(file) {
         if (file.contents) {
-            file.contents = new Buffer(html.prettyPrint(getHTML(file.contents.toString())));
+            file.contents = new Buffer(html.prettyPrint(getHTML(file.contents.toString()), options.prettyPrintOptions));
         } else {
-            file = new Buffer(html.prettyPrint(getHTML(file.toString())))
+            file = new Buffer(html.prettyPrint(getHTML(file.toString()), options.prettyPrintOptions))
         }
 
         return file;
